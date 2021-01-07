@@ -20,8 +20,20 @@ public class Wallet {
     return balance;
   }
 
+  public void bet(int amount) {
+    ensureAmountNotLessThanZero(amount);
+    ensureSufficientBalance(amount);
+    balance -= amount;
+  }
+
   private void ensureAmountNotLessThanZero(int amount) {
     if (amount < 0) {
+      throw new IllegalArgumentException();
+    }
+  }
+
+  private void ensureSufficientBalance(int amount) {
+    if (amount > balance) {
       throw new IllegalArgumentException();
     }
   }
