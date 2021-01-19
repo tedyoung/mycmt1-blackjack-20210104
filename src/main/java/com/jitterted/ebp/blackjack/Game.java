@@ -181,7 +181,20 @@ public class Game {
     playerBetAmount = betAmount;
   }
 
+  public void playerWinsBlackjack() {
+    playerBalance += playerBetAmount * 2.5;
+  }
+
   public void playerWins() {
     playerBalance += playerBetAmount * 2;
+  }
+
+  public void playerLoses() {
+    playerBalance += playerBetAmount * 0;
+  }
+
+
+  public void playerPushes() {
+    playerBalance += playerBetAmount * 1;
   }
 }
